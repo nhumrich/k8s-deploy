@@ -11,6 +11,9 @@ Drop a file `k8s-deployment.yaml` into the container (most CI's drop your repo i
 
 Run the command `python /scripts/k8s-deploy.py` to do the deploy.
 
+You also need to provide a valid kube config with credentials. You can either drop that into the container at `/root/.kube/config`, or
+provide it via the KUBECTL_CONFIG environment variable
+
 # Variables
 
 You can use jinja2 for templating. For example, if you provide the following string `{{ tag }}` anywhere in your yaml,
