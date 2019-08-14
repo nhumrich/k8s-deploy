@@ -23,7 +23,7 @@ then you can pass in the tag via the command line, i.e. `python /scripts/k8s-dep
 # What does this give me?
 
 This container provides two things. 1) The templating (for specifying tag/etc), but also a smart deployment for deployment object.
-This script will run `kubectl apply` on your yaml file. So you can have many k8s objects in the yaml. If one of more of your objects is a "deployment",
+This script will run `kubectl apply` on your yaml file. So you can have many k8s objects in the yaml. If one or more of your objects is a "deployment",
 then this script will run the deployment with auto-rollback. 
 Here is how it works:
 
