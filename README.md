@@ -7,7 +7,7 @@ This is a docker container for deploying to kubernetes. It uses jinja templating
 # To deploy
 
 Drop a file `k8s-deployment.yaml` into the container (most CI's drop your repo into the container for you)
-(or you can use anyother named file with the -f argument).
+(or you can use another named file with the -f argument).
 
 Run the command `python /scripts/k8s-deploy.py` to do the deploy.
 
