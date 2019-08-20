@@ -144,7 +144,7 @@ def deploy(filename):
 def run():
     if os.getenv('KUBECTL_CONFIG'):
         os.makedirs('/root/.kube', exist_ok=True)
-        with open('/root/.kube/config') as f:
+        with open('/root/.kube/config', 'w') as f:
             f.write(os.getenv('KUBECTL_CONFIG'))
 
     options = get_options()
