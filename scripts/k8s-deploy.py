@@ -147,6 +147,10 @@ def run():
         with open('/root/.kube/config', 'w') as f:
             f.write(os.getenv('KUBECTL_CONFIG'))
 
+    if os.getenv('CI_ENVIRONMENT_NAME'):
+        context = os.getenv('CI_ENVIRONMENT_NAME')
+        subprocess.check_output(['kubectl', 'config', 'use-context', context])
+         
     options = get_options()
     s = get_yaml(options)
 
