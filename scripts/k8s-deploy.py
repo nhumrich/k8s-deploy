@@ -88,7 +88,7 @@ def check_health_of_first_pod(deployment):
                     print('-- Logs of bad container --')
                     pod_logs = subprocess.check_output(
                         ['kubectl', 'logs', new_pod['metadata']['name']])
-                    print(pod_logs.encode())
+                    print(pod_logs.decode())
                     raise HealthError('Container not starting up correctly. Rolling back.')
 
         print('Waiting for 1st container to become healthy...')
