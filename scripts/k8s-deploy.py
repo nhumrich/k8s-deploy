@@ -97,7 +97,11 @@ def check_health_of_first_pod(deployment):
     try:
         pod_logs = subprocess.check_output(
             ['kubectl', 'logs', new_pod['metadata']['name']])
-        print(pod_logs.encode())
+        try:
+            pod_logs = pod_logs.encode()
+        except AttributeError:
+            # not bytes
+        print(pod_logs)
     except subprocess.CalledProcessError:
         print('-no pod logs-')
     raise HealthError('Container never went healthy, rolling back.')
