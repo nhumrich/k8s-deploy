@@ -101,6 +101,7 @@ def check_health_of_first_pod(deployment):
             pod_logs = pod_logs.encode()
         except AttributeError:
             # not bytes
+            pass
         print(pod_logs)
     except subprocess.CalledProcessError:
         print('-no pod logs-')
